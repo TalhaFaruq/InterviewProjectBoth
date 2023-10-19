@@ -1,0 +1,19 @@
+<div class="student-details">
+    <h2>Student Details</h2>
+    <div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Student Name:</mat-label>
+            <input matInput placeholder="Name" type="text" id="studentName" [(ngModel)]="studentName">
+        </mat-form-field>
+    </div>
+
+
+    <div>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Phone Number:</mat-label>
+            <input matInput placeholder="PhoneNumber" type="text" id="phoneNumber" [(ngModel)]="phoneNumber">
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="saveStudent()">Save Student</button>
+</div>

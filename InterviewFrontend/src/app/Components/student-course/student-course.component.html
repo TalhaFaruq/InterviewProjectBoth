@@ -1,0 +1,110 @@
+<div class="container display-flex flex-column width-100">
+    <div class="row">
+        <div class="col-md-6">
+            <app-course></app-course>
+        </div>
+        <hr>
+        <br>
+        <div class="col-md-6">
+            <app-student></app-student>
+        </div>
+    </div>
+
+
+    <hr>
+    <br>
+    <h2>Assign/Unassign Courses</h2>
+
+    <div class="row ">
+        <div class="col-md-6">
+            <h3>Assign Courses to Students</h3>
+            <form (ngSubmit)="assignCoursesToStudent()">
+                <div class="form-group">
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Student ID:</mat-label>
+                        <input matInput type="number" id="studentId" [(ngModel)]="studentId" name="studentId" required />
+                    </mat-form-field>
+
+                </div>
+                <div class="form-group">
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Course IDs (comma-separated):</mat-label>
+                        <input matInput type="text" id="courseIds" [(ngModel)]="courseIds" name="courseIds" required />
+                    </mat-form-field>
+
+                </div>
+                <button mat-raised-button color="primary" type="submit">Assign Courses</button>
+            </form>
+        </div>
+        <br>
+        <div class="col-md-6">
+            <h3>Unassign Courses from Students</h3>
+            <form (ngSubmit)="unassignCoursesFromStudent()">
+                <div class="form-group">
+
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Student ID:</mat-label>
+                        <input matInput type="number" id="studentIdUnassign" [(ngModel)]="studentIdUnassign" name="studentIdUnassign" required />
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Course IDs (comma-separated):</mat-label>
+                        <input matInput type="text" id="courseIdsUnassign" [(ngModel)]="courseIdsUnassign" name="courseIdsUnassign" required />
+                    </mat-form-field>
+                </div>
+                <button mat-raised-button color="primary" type="submit">Unassign Courses</button>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+    <table class="table table-hover">
+
+        <thead>
+            <tr>
+                <td>Student Name</td>
+                <td>Phone Number</td>
+                <td>Student Courses</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.studentName}}</td>
+                <td>{{student.phoneNumber}}</td>
+                <td>{{student.courses.join(', ') }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-hover">
+
+        <thead>
+            <tr>
+                <td>Course Name</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of courses">
+                <td>{{course.courseName}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h1>
+        Search
+    </h1>
+    <div class="col-md-6">
+        <app-search></app-search>
+    </div>
+
+</div>

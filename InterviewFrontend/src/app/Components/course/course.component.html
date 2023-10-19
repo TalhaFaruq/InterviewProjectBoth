@@ -1,0 +1,11 @@
+<div class="course-details">
+    <h2>Course Details</h2>
+    <div>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Course Name:</mat-label>
+            <input matInput placeholder="Name" type="text" id="courseName" [(ngModel)]="courseName" />
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="saveCourse()">Save Course</button>
+</div>

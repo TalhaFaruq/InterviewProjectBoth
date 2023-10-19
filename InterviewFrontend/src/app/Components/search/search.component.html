@@ -1,0 +1,13 @@
+<div>
+    <input type="search" name="searchBar" id="searchBox" placeholder="Search here" (search)="searchStudentsOrCourses($event)">
+
+    <div *ngIf="names.length">
+
+        <p>{{searchName}} found : {{names.join(', ')}}</p>
+
+    </div>
+
+    <div *ngIf="!names.length && searchName">
+        <P>No Result found </P>
+    </div>
+</div>
